@@ -34,6 +34,19 @@ public class Cola <T extends Base> {
         
         return elements.isEmpty();
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("[");
+        for (T e : elements){
+            
+            sb.append(" ").append(e.toString());
+        }
+        
+        sb.append("]");
+        
+        return sb.toString();
+    }
     
     
     
