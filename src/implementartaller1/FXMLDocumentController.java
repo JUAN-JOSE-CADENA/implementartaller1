@@ -5,6 +5,8 @@
  */
 package implementartaller1;
 
+import core.Cola;
+import dato.Cliente;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -17,19 +19,44 @@ import javafx.scene.control.Label;
  * @author User
  */
 public class FXMLDocumentController implements Initializable {
-    
+
     @FXML
     private Label label;
-    
+
+    Cola<Cliente> colac;
+    int max;
+    int min;
+    int range;
+
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+
+        colac.encolar(new Cliente((int)(Math.random() * range) + min, (int)(Math.random() * range) + min));
+        colac.encolar(new Cliente((int)(Math.random() * range) + min, (int)(Math.random() * range) + min));
+        colac.encolar(new Cliente((int)(Math.random() * range) + min, (int)(Math.random() * range) + min));
+        colac.encolar(new Cliente((int)(Math.random() * range) + min, (int)(Math.random() * range) + min));
+        colac.encolar(new Cliente((int)(Math.random() * range) + min, (int)(Math.random() * range) + min));
+        
+        System.out.println("Contenido de la cola \n" + colac.toString());
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+
+        colac = new Cola<>();
+
+        max = 10;
+        min = 1;
+        range = max - min + 1;
+    }
+
+    @FXML
+    private void mostrar(ActionEvent event) {
+        
+        colac.desencolar();       
+        System.out.println("Contenido de la cola \n" + colac.toString());
+
+    }
+
 }
