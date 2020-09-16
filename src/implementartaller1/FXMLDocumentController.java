@@ -5,6 +5,7 @@
  */
 package implementartaller1;
 
+import dato.FactoryCliente;
 import core.Cola;
 import dato.Cajero;
 import dato.Cliente;
@@ -22,6 +23,10 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.util.Duration;
 
 /**
@@ -31,17 +36,17 @@ import javafx.util.Duration;
 public class FXMLDocumentController implements Initializable {
 
     @FXML
-    private TextAres textAreaReporte;
+    private TextArea textAreaReporte;
 
     @FXML
-    private TextFields textFieldsTiempo;
+    private TextField textFieldsTiempo;
 
     @FXML
-    private Webview webViewCola;
+    private WebView webViewCola;
     private WebEngine webEngineCola;
 
     @FXML
-    private Webview webViewCajeros;
+    private WebView webViewCajeros;
     private WebEngine webEngineCajeros;
 
     private Cola<Cliente> colac;
@@ -215,6 +220,14 @@ public class FXMLDocumentController implements Initializable {
             }
 
         }
+        
+        System.err.println(cajeros.toString());
+    }
+    
+    private String hacerHtmlCola() {
+        
+        String html = "<html><table boder=1 width=100%>";
+        html += Operaciones
     }
 
 }

@@ -69,6 +69,10 @@ public class Cliente extends Base {
     public String toString() {
         return "Cliente{" + "edad=" + edad + ", tiempoEspera=" + tiempoEspera + '}' + "\n";
     }
+
+    public int getTiempoTransaccion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 
